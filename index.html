@@ -16,21 +16,27 @@
 	<body>
 		<script type="text/javascript">
 		// d3 code goes here 
-		var dataset = [5, 10, 15, 20, 25]; 
-		// part 1
-			// d3.select("body").selectAll("p").data(dataset).enter().append("p").text(function(d) {return d; }).style("color", function(k) {
-			// 		if (k > 15) {
-			// 			return "pink"; 
-			// 		} else {
-			// 			return "blue"; 
-			// 		}
-			// }); 
-		// part 2 
+		var dataset = [];
+		for (var i = 0; i < 25; i++) {
+			var newNumber = Math.random() * 30; 
+			dataset.push(newNumber); 
+		} 
+		 
 		d3.select("body").selectAll("div").data(dataset).enter().append("div").attr("class", "bar").style("height", function(d) {
-			return d + "px";
+				var barHeight = d * 5; 
+				return barHeight + "px";
 		});
 		
 		</script>
+		<br>
+
+		<svg width="500" height="50">
+			<!-- <rect x="0" y="0" width="500" height="50"/>
+			<circle cx="250" cy="25" r="25"/>  -->
+			<text x="250" y="25" font-family="sans-serif"
+ font-size="25" fill="gray">hai world</text>
+
+		</svg>
 	</body>
 </html>
 
