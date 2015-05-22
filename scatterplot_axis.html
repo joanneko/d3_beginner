@@ -51,10 +51,13 @@
 								 .domain([0, d3.max(dataset, function(d) { return d[1]; })])
 								 .range([2, 5]);
 
+			// var formatAsPercentage = d3.format(".1%"); 
+			
 			//Define X axis
 			var xAxis = d3.svg.axis()
 							  .scale(xScale)
 							  .orient("bottom").ticks(5);
+							  // .tickFormat(formatAsPercentage);
 
 			var yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(5); 
 
@@ -109,6 +112,8 @@
 
 
 			svg.append("g").attr("class", "axis").attr("transform", "translate(" + padding + ",0)").call(yAxis);
+
+
 
 		</script>
 	</body>
